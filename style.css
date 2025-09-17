@@ -1,0 +1,223 @@
+/* CSS reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+/* variables */
+:root {
+  /*  Colors */
+
+  /*  Primary */
+
+  --primary-500: hsl(179, 62%, 43%);
+  --primary-500-muted: hsl(179, 47%, 52%);
+  --primary-400: hsl(71, 73%, 54%);
+
+  /*  Neutral */
+
+  --neutral-0: hsl(0, 0%, 100%);
+  --neutral-10: hsl(0, 0%, 90%);
+  --neutral-100: hsl(204, 43%, 93%);
+  --neutral-500: hsl(218, 22%, 67%);
+  --neutral-400: hsl(218, 22%, 77%);
+
+  /* font stuff */
+  --ff-base: "Karla", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+/* base styling */
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  color: var(--neutral-500);
+  background-color: var(--neutral-100);
+}
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 2em 1.8em;
+  background-color: var(--neutral-0);
+}
+h1 {
+  font-size: clamp(1.2rem, 0.771rem + 1.143vw, 1.8rem);
+  font-weight: var(--fw-bold);
+}
+
+/* layout styling*/
+
+.container {
+  max-width: 450px;
+  margin: 2rem 1rem;
+  border-radius: 0.5em;
+  overflow: hidden;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* component styling */
+
+/* community-section starts from here */
+
+.community-section h1 {
+  color: var(--primary-500);
+}
+.highlight-text {
+  font-size: clamp(0.87rem, 0.42rem + 1.2vw, 1.5rem);
+  font-weight: var(--fw-bold);
+  color: var(--primary-400);
+}
+.description {
+  font-size: clamp(0.9rem, 0.686rem + 0.571vw, 1.2rem);
+  line-height: 1.7;
+}
+
+/* subscription-section starts from here */
+
+.subscription-section {
+  background-color: var(--primary-500);
+  color: var(--neutral-100);
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  font-weight: var(--fw-bold);
+  font-size: 2rem;
+}
+.price span {
+  color: var(--neutral-400);
+  font-weight: var(--fw-regular);
+  font-size: 0.5em;
+}
+.btn {
+  margin-top: 0.5rem;
+  padding: 0.75em 1.5em;
+  font-weight: var(--fw-bold);
+  color: var(--neutral-100);
+  border: none;
+  outline: none;
+  border-radius: 0.2em;
+  background-color: var(--primary-400);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+}
+
+/* why-us_section  startd from here */
+
+.why-us-section {
+  background-color: var(--primary-500-muted);
+  color: var(--neutral-100);
+}
+ul {
+  list-style: none;
+  color: var(--neutral-10);
+}
+
+footer {
+  margin: 0 1rem;
+  text-align: center;
+}
+.attribution a {
+  font-size: 1.2rem;
+  font-weight: var(--fw-bold);
+  text-align: center;
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-400));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* media queries  */
+
+@media (min-width: 38em) {
+  .container {
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* sections postioning */
+  .community-section {
+    grid-column: span 2;
+  }
+}
+@media (min-width: 56em) {
+  body {
+    line-height: 1.25;
+  }
+  section {
+    gap: 1rem;
+    line-height: 1.1;
+  }
+}
