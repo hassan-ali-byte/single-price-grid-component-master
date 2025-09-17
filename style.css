@@ -104,7 +104,8 @@ section {
   padding: 2em 1.8em;
   background-color: var(--neutral-0);
 }
-h1 {
+h1,
+h2 {
   font-size: clamp(1.2rem, 0.771rem + 1.143vw, 1.8rem);
   font-weight: var(--fw-bold);
 }
